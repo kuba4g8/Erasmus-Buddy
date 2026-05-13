@@ -54,3 +54,5 @@ google-services.json
 
 # Ukryte pliki systemowe macOS
 .DS_Store
+
+.idea/
