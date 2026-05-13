@@ -1,0 +1,56 @@
+# Skompilowane pliki aplikacji
+*.apk
+*.ap_
+*.aab
+
+# Pliki maszyn wirtualnych ART/Dalvik
+*.dex
+
+# Skompilowane klasy Java
+*.class
+
+# Wygenerowane pliki i katalogi
+bin/
+gen/
+out/
+
+# Pamięć podręczna i pliki budowania Gradle
+.gradle/
+build/
+app/build/
+
+# Lokalne pliki konfiguracyjne ze ścieżkami systemowymi
+local.properties
+
+# Logi
+*.log
+
+# Pliki tymczasowe edytora nawigacji
+.navigation/
+
+# Zrzuty z Android Studio
+captures/
+
+# Pliki konfiguracyjne środowiska IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+# Pliki z kluczami do podpisywania aplikacji
+*.jks
+*.keystore
+
+# Pliki budowania C/C++ (NDK)
+.externalNativeBuild/
+.cxx/
+
+# Poufne klucze usług Google
+google-services.json
+
+# Ukryte pliki systemowe macOS
+.DS_Store
