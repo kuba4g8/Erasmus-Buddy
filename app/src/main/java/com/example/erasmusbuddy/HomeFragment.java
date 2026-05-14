@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment {
 
         // 3. Open the "temporary DB" (SharedPreferences) so we can save name of user
         // Jakub Need to change it later for saving in DB
-        final SharedPreferences prefs = getActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        final SharedPreferences prefs = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // 4. Checking if name is saved in UserData
         String savedName = prefs.getString("user_name", "");
@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         if (!savedName.isEmpty()){
             inputName.setVisibility(View.GONE);
             welcomeText.setVisibility(View.VISIBLE);
-            welcomeText.setText("Welcome " + savedName + "!");
+            welcomeText.setText("Welcome back " + savedName + "!");
         }
 
         // 6. Tell the button what to do when someone clicks it
