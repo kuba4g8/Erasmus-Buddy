@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
         if (!savedName.isEmpty()){
             inputName.setVisibility(View.GONE);
             welcomeText.setVisibility(View.VISIBLE);
-            welcomeText.setText("Welcome " + savedName + "!");
+            welcomeText.setText("Welcome back " + savedName + "!");
         }
 
         // 6. Tell the button what to do when someone clicks it
