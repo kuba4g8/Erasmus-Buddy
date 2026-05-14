@@ -1,10 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/challenges"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF7FD"
     tools:context=".ChallengesFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/challengesRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvChallengesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Erasmus Challenges"
+                android:textAlignment="center"
+                android:textColor="#4E356D"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvChallengesSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Complete small missions abroad and become a local legend."
+                android:textAlignment="center"
+                android:textColor="#7A5C91"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ivChallenges"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:contentDescription="Challenges image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/collage_amigos" />
+
+            <TextView
+                android:id="@+id/tvAddTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Add your own task"
+                android:textColor="#4E356D"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNewTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Example: Buy coffee in local language"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btnAddTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#7E57C2"
+                android:text="ADD TASK"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvDefaultTasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Survival tasks"
+                android:textColor="#4E356D"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/cbCoffee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buy coffee in the local language" />
+
+            <CheckBox
+                android:id="@+id/cbSupermarket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find the cheapest supermarket" />
+
+            <CheckBox
+                android:id="@+id/cbTransport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use public transport without getting lost" />
+
+            <CheckBox
+                android:id="@+id/cbCulture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit 3 cultural spots" />
+
+            <CheckBox
+                android:id="@+id/cbFriend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Make one local friend" />
+
+            <CheckBox
+                android:id="@+id/cbHospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Find the nearest hospital" />
+
+            <Button
+                android:id="@+id/btnSaveProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#4E356D"
+                android:text="SAVE PROGRESS"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
