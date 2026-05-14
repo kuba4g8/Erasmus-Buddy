@@ -2,81 +2,78 @@ package com.example.erasmusbuddy;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.material.navigation.NavigationView;
 
+/*
+ * This is the Main Activity. It is like the "frame" of our app.
+ * It holds the top bar (Toolbar) and the side menu (Navigation Drawer).
+ */
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout drawerLayout;
+    // Variable for the side menu structure
+    private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize views for Navigation Drawer
-        drawerLayout = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        // 1. Find the top bar and set it up
         Toolbar toolbar = findViewById(R.id.toolbar);
-
-        // Set Toolbar as Action Bar
         setSupportActionBar(toolbar);
 
-        // Configure "hamburger" button
+        // 2. Find the menu drawer and the list of items
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navView = findViewById(R.id.nav_view);
+
+        // 3. Setup the "hamburger" button to open/close the menu
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
-        drawerLayout.addDrawerListener(toggle);
+                this, drawer, toolbar, R.string.open_drawer, R.string.close_drawer);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        // Load Home Fragment by default
+        // 4. When we first open the app, show the Home Fragment automatically
         if (savedInstanceState == null) {
-            replaceFragment(new HomeFragment(), "Home");
-            navigationView.setCheckedItem(R.id.nav_home);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HomeFragment())
+                    .commit();
+            navView.setCheckedItem(R.id.nav_home);
         }
 
-        // Handle sidebar menu clicks
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        // 5. Tell the app what to do when we click a menu item
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
+                // Logic: if user clicks Home, show HomeFragment, etc.
                 if (id == R.id.nav_home) {
-                    replaceFragment(new HomeFragment(), "Home");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, new HomeFragment())
+                            .commit();
                 } else if (id == R.id.nav_challenges) {
-                    replaceFragment(new ChallengesFragment(), "Survival Tasks");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, new ChallengesFragment())
+                            .commit();
                 } else if (id == R.id.nav_emergency) {
-                    replaceFragment(new EmergencyFragment(), "Emergency");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, new EmergencyFragment())
+                            .commit();
                 } else if (id == R.id.nav_guide) {
-                    replaceFragment(new CityGuideFragment(), "City Guide");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, new CityGuideFragment())
+                            .commit();
                 }
 
-                drawerLayout.closeDrawers();
+                // Close the menu after we make a choice
+                drawer.closeDrawers();
                 return true;
             }
         });
-    }
-
-    /**
-     * Replaces the current fragment in the container.
-     * @param fragment The new fragment to show.
-     * @param title The title for the Toolbar.
-     */
-    public void replaceFragment(Fragment fragment, String title) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, fragment);
-        transaction.commit();
-
-        // Update the Toolbar title
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(title);
-        }
     }
 }
