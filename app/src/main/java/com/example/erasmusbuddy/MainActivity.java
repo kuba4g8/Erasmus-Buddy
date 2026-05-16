@@ -7,6 +7,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.databaseMeneger.TestDB;
 import com.google.android.material.navigation.NavigationView;
 
 /*
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TestDB testy = new TestDB(MainActivity.this);
+        testy.runTests();
 
         // 1. Find the top bar and set it up
         Toolbar toolbar = findViewById(R.id.toolbar);

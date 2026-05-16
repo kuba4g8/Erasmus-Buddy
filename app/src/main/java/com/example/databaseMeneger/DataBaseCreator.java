@@ -1,5 +1,6 @@
 package com.example.databaseMeneger;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,8 +30,27 @@ public class DataBaseCreator extends SQLiteOpenHelper
                 + isDone + " INTEGER DEFAULT 0)";
 
         database.execSQL(createTableQuery);
+        insertDefaulTasks(database);
     }
 
+    private void insertDefaulTasks(SQLiteDatabase db){
+        String[] defaultTasks = {
+                "Find the nearest hospital",
+                "Make one local friend",
+                "Visit 3 cultural spots",
+                "Use public transport without getting lost",
+                "Make excursion with ESN organization",
+                "Find the cheapest supermarket",
+                "Buy coffee in the local language"
+        };
+
+        for (String task : defaultTasks){
+            ContentValues values = new ContentValues();
+            values.put(task_Name, task);
+            values.put(isDone, 0);
+            db.insert(taskTableName, null, values);
+        }
+    }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion)
     {

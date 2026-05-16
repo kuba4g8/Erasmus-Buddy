@@ -102,56 +102,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/cbCoffee"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Buy coffee in the local language"
-                    android:textColor="@color/material_dynamic_tertiary20" />
-
-                <CheckBox
-                    android:id="@+id/cbSupermarket"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Find the cheapest supermarket"
-                    android:textColor="#3A284E" />
-
-                <CheckBox
-                    android:id="@+id/cbCultural"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Make excursion with ESN organization"
-                    android:textColor="#3A284E" />
-
-                <CheckBox
-                    android:id="@+id/cbTransport"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Use public transport without getting lost"
-                    android:textColor="#3A284E" />
-
-                <CheckBox
-                    android:id="@+id/cbCulture"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Visit 3 cultural spots"
-                    android:textColor="#3A284E" />
-
-                <CheckBox
-                    android:id="@+id/cbFriend"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Make one local friend"
-                    android:textColor="#3A284E" />
-
-                <CheckBox
-                    android:id="@+id/cbHospital"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Find the nearest hospital"
-                    android:textColor="#3A284E" />
-
             </LinearLayout>
 
         </LinearLayout>
