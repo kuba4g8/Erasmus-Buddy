@@ -95,80 +95,62 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <CheckBox
-                android:id="@+id/cbCoffee"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Buy coffee in the local language"
-                android:textColor="@color/material_dynamic_tertiary20" />
-
-            <CheckBox
-                android:id="@+id/cbSupermarket"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Find the cheapest supermarket"
-                android:textColor="#3A284E" />
-            <CheckBox
-                android:id="@+id/cbCultural"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Make excursion with ESN organization"
-                android:textColor="#3A284E" />
-            <CheckBox
-                android:id="@+id/cbTransport"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Use public transport without getting lost"
-                android:textColor="#3A284E" />
-
-            <CheckBox
-                android:id="@+id/cbCulture"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Visit 3 cultural spots"
-                android:textColor="#3A284E" />
-
-            <CheckBox
-                android:id="@+id/cbFriend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Make one local friend"
-                android:textColor="#3A284E" />
-
-            <CheckBox
-                android:id="@+id/cbHospital"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Find the nearest hospital"
-                android:textColor="#3A284E" />
-
+            <!-- This container holds all of our challenges, they will be added and deleted by "ChallengesFragment.java" -->
             <LinearLayout
-                android:id="@+id/layoutTaskButtons"
+                android:id="@+id/containerTasks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnAddTaskBottom"
-                    android:layout_width="0dp"
+                <CheckBox
+                    android:id="@+id/cbCoffee"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/system_error_light"
-                    android:text="DELETE task"
-                    android:textColor="@android:color/white" />
+                    android:text="Buy coffee in the local language"
+                    android:textColor="@color/material_dynamic_tertiary20" />
 
-                <Button
-                    android:id="@+id/btnMarkDone"
-                    android:layout_width="0dp"
+                <CheckBox
+                    android:id="@+id/cbSupermarket"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/design_default_color_secondary_variant"
-                    android:text="task DONE"
-                    android:textColor="@android:color/white" />
+                    android:text="Find the cheapest supermarket"
+                    android:textColor="#3A284E" />
+
+                <CheckBox
+                    android:id="@+id/cbCultural"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Make excursion with ESN organization"
+                    android:textColor="#3A284E" />
+
+                <CheckBox
+                    android:id="@+id/cbTransport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Use public transport without getting lost"
+                    android:textColor="#3A284E" />
+
+                <CheckBox
+                    android:id="@+id/cbCulture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Visit 3 cultural spots"
+                    android:textColor="#3A284E" />
+
+                <CheckBox
+                    android:id="@+id/cbFriend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Make one local friend"
+                    android:textColor="#3A284E" />
+
+                <CheckBox
+                    android:id="@+id/cbHospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Find the nearest hospital"
+                    android:textColor="#3A284E" />
 
             </LinearLayout>
 
