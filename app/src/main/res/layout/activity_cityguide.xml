@@ -1,6 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6D5FF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvCityTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="CITY GUIDE THESSALONIKI"
+                android:textColor="#4E356D"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivCity"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:src="@drawable/thessaloniki"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/tvVocabulary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Basic Greek Vocabulary 🇬🇷"
+                android:textColor="#4E356D"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvWords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello → Γεια σου (Yia sou)
+
+Thank you → Ευχαριστώ (Efharistó)
+
+Good morning → Καλημέρα (Kaliméra)
+
+Nice to meet you → Χάρηκα (Hárika)
+
+Cheers → Γεια μας (Yia mas)"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="28dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Hello = Γεια σου (Yia sou)"
+                android:textColor="#5022A6"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Thank You = Ευχαριστώ (Efharistó)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvBestSpots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Best Spots and Plans "
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#4E356D"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Walk along the port to see WHITE TOWER and then UMBRELLA sculpture"
+                android:textSize="19sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="292dp"
+                android:layout_height="297dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:soundEffectsEnabled="true"
+                app:srcCompat="@drawable/paraguas_thess" />
+
+            <TextView
+                android:id="@+id/tvPlans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Go up to Ano Poli for sunset
+
+• Walk from the Port to the White Tower
+
+• Visit Rotunda and Arch of Galerius
+
+• Have an Erasmus beer near Rotunda
+
+• Try bougatsa for breakfast
+
+• Rent a car and visit Karydi Beach
+
+• Explore Halkidiki beaches
+
+• Watch the sunset from the seafront promenade"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- BUTTON -->
+
+            <Button
+                android:id="@+id/btnMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OPEN MAP"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#7E57C2"
+                android:layout_marginBottom="30dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
