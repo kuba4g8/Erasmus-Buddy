@@ -28,52 +28,124 @@
             <ImageView
                 android:id="@+id/ivCity"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:src="@drawable/thessaloniki"
+                android:layout_height="231dp"
+                android:layout_marginBottom="24dp"
                 android:scaleType="centerCrop"
-                android:layout_marginBottom="24dp"/>
-
-            <TextView
-                android:id="@+id/tvVocabulary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:text="Basic Greek Vocabulary 🇬🇷"
-                android:textColor="#4E356D"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvWords"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello → Γεια σου (Yia sou)
-
-Thank you → Ευχαριστώ (Efharistó)
-
-Good morning → Καλημέρα (Kaliméra)
-
-Nice to meet you → Χάρηκα (Hárika)
-
-Cheers → Γεια μας (Yia mas)"
-                android:textSize="18sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="28dp"/>
+                android:src="@drawable/thessaloniki" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="- Hello = Γεια σου (Yia sou)"
-                android:textColor="#5022A6"
-                android:textSize="18sp" />
+                android:fontFamily="sans-serif"
+                android:text="Are you prepared to live in thessaloniki?"
+                android:textAlignment="center"
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:text="Lets see if you know all these basic things..."
+                android:textAlignment="center"
+                android:textColor="#871313"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/vocabularyBubbles"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="- Thank You = Ευχαριστώ (Efharistó)"
-                android:textSize="18sp" />
+                android:layout_marginBottom="28dp"
+                android:background="#78CAE2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVocabulary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Basic Greek Vocabulary"
+                    android:textAlignment="center"
+                    android:textColor="#4E356D"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_left"
+                    android:backgroundTint="@color/white"
+                    android:padding="12dp"
+                    android:text="Hello &#10;Γεια σου (Yia sou)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_right"
+                    android:padding="12dp"
+                    android:text="Thank you &#10;Ευχαριστώ (Efharistó)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_left"
+                    android:padding="12dp"
+                    android:text="Good morning &#10;Καλημέρα (Kaliméra)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_right"
+                    android:padding="12dp"
+                    android:text="Cheers &#10;Γεια μας (Yia mas)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_left"
+                    android:padding="12dp"
+                    android:text="Nice to meet you &#10;Χάρηκα (Hárika)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_right"
+                    android:padding="12dp"
+                    android:text="Good evening &#10;Καλησπέρα (Kalispéra)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bubble_left"
+                    android:backgroundTint="@color/white"
+                    android:padding="12dp"
+                    android:text="I would like a coffee with milk, please. &#10;Θα ήθελα έναν καφέ με γάλα, παρακαλώ &#10;(Tha íthela énan kafé me gála, parakaló)"
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+
 
             <TextView
                 android:id="@+id/tvBestSpots"
@@ -88,54 +160,128 @@ Cheers → Γεια μας (Yia mas)"
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. Walk along the port to see WHITE TOWER and then UMBRELLA sculpture"
-                android:textSize="19sp" />
+                android:layout_height="50dp"
+                android:text="1. Walk along the port to see the WHITE TOWER and then UMBRELLAS sculpture"
+                android:textColor="#333333"
+                android:textSize="17sp" />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="292dp"
-                android:layout_height="297dp"
+                android:layout_height="278dp"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:layout_gravity="center"
                 android:soundEffectsEnabled="true"
-                app:srcCompat="@drawable/paraguas_thess" />
+                app:srcCompat="@drawable/paraguas_thess"
+                android:layout_marginBottom="12dp"/>
 
             <TextView
-                android:id="@+id/tvPlans"
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:text="2. Go up to Ano Poli for SUNSET and VIEW of the city (ACROPOLIS WALLS)"
+                android:textColor="#333333"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="323dp"
+                android:layout_height="209dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/sunset_anopolis"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:text="3. There is a BAR next to the Rotunda where there is a DISCOUNT in the BEER just for being Erasmus student: "
+                android:textColor="#333333"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Go up to Ano Poli for sunset
+                android:text="To Podilato Beer House"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
-• Walk from the Port to the White Tower
-
-• Visit Rotunda and Arch of Galerius
-
-• Have an Erasmus beer near Rotunda
-
-• Try bougatsa for breakfast
-
-• Rent a car and visit Karydi Beach
-
-• Explore Halkidiki beaches
-
-• Watch the sunset from the seafront promenade"
-                android:textSize="18sp"
-                android:textColor="#333333"
-                android:layout_marginBottom="24dp"/>
-
-            <!-- BUTTON -->
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:text="https://maps.app.goo.gl/WAiYG8bDnYUg5Ci88?g_st=aw"
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/btnMap"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="OPEN MAP"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="#7E57C2"
-                android:layout_marginBottom="30dp"/>
+                android:text="open map"
+                android:textColor="@android:color/white"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="4. Try BOUGATSA for breakfast"
+                android:textColor="#333333"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="216dp"
+                android:layout_height="114dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/bougatsa"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:text="5. Rent a car and explore HALKIDIKI BEACHES"
+                android:textColor="#333333"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="233dp"
+                android:layout_height="144dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/halkidiki"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:text="6. Visit ROTUNDA and ARCH OF GALERIUS (free entrance for students below 25 )"
+                android:textColor="#333333"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="7. Spend a day in KARYDI BEACH "
+                android:textColor="#333333"
+                android:textSize="17sp" />
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="263dp"
+                android:layout_height="129dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/karidi_beach"
+                android:layout_marginBottom="12dp" />
 
         </LinearLayout>
 
