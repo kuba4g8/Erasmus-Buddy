@@ -40,6 +40,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Are you prepared to live in thessaloniki?"
                 android:textAlignment="center"
+                android:textColor="#0F0000"
                 android:textSize="17sp" />
 
             <TextView
@@ -54,8 +55,8 @@
             <LinearLayout
                 android:id="@+id/vocabularyBubbles"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="28dp"
+                android:layout_height="602dp"
+                android:layout_marginBottom="35dp"
                 android:background="#78CAE2"
                 android:orientation="vertical">
 
@@ -101,6 +102,7 @@
                     android:text="Good morning &#10;Καλημέρα (Kaliméra)"
                     android:textColor="#333333"
                     android:textSize="16sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,6 +113,7 @@
                     android:text="Cheers &#10;Γεια μας (Yia mas)"
                     android:textColor="#333333"
                     android:textSize="16sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -121,6 +124,7 @@
                     android:text="Nice to meet you &#10;Χάρηκα (Hárika)"
                     android:textColor="#333333"
                     android:textSize="16sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -131,6 +135,7 @@
                     android:text="Good evening &#10;Καλησπέρα (Kalispéra)"
                     android:textColor="#333333"
                     android:textSize="16sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -145,17 +150,15 @@
             </LinearLayout>
 
 
-
-
             <TextView
                 android:id="@+id/tvBestSpots"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginBottom="12dp"
                 android:text="Best Spots and Plans "
-                android:textSize="22sp"
-                android:textStyle="bold"
                 android:textColor="#4E356D"
-                android:layout_marginBottom="12dp"/>
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -174,7 +177,7 @@
                 android:scaleType="fitCenter"
                 android:soundEffectsEnabled="true"
                 app:srcCompat="@drawable/paraguas_thess"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="14dp"/>
 
             <TextView
                 android:id="@+id/textView5"
@@ -192,13 +195,13 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/sunset_anopolis"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="14dp"/>
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="69dp"
-                android:text="3. There is a BAR next to the Rotunda where there is a DISCOUNT in the BEER just for being Erasmus student: "
+                android:text="3. Take a beer with your friends in the BARS near ROTUNDA. Some of them even have DISCOUNT if you are Erasmus student: "
                 android:textColor="#333333"
                 android:textSize="17sp" />
 
@@ -206,16 +209,10 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="To Podilato Beer House"
+                android:text="Rotunda location (next to Arc of Galerio): "
+                android:textColor="#412657"
                 android:textSize="17sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="match_parent"
-                android:layout_height="41dp"
-                android:text="https://maps.app.goo.gl/WAiYG8bDnYUg5Ci88?g_st=aw"
-                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/btnMap"
@@ -241,7 +238,7 @@
                 android:layout_height="114dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/bougatsa"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="14dp"/>
 
             <TextView
                 android:id="@+id/textView8"
@@ -258,12 +255,12 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/halkidiki"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="15dp"/>
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
+                android:layout_height="68dp"
                 android:text="6. Visit ROTUNDA and ARCH OF GALERIUS (free entrance for students below 25 )"
                 android:textColor="#333333"
                 android:textSize="17sp" />
@@ -281,7 +278,16 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/karidi_beach"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="14dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:text="GREECE HAS SO MANY GOOD PLANS WAITING FOR YOU !!!"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

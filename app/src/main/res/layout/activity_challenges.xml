@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Example: Buy coffee in local language"
                 android:inputType="text"
-                android:textColor="#1E0E33" />
+                android:textColor="#291840" />
 
             <Button
                 android:id="@+id/btnAddTask"

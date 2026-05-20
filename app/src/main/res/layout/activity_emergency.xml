@@ -76,7 +76,6 @@
             android:textSize="16sp"
             android:paddingBottom="16dp" />
 
-        <!-- 108: Coast Guard -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,7 +89,6 @@
             android:textSize="16sp"
             android:paddingBottom="16dp" />
 
-        <!-- 171: Tourist Police -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,6 +101,29 @@
             android:text="Tourist Police (Assistance for visitors)"
             android:textSize="16sp"
             android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="223dp"
+            android:layout_height="58dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/bubble_right"
+            android:padding="12dp"
+            android:text="What do I do!?"
+            android:textColor="#9E0F0F"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgNewPhoto"
+            android:layout_width="355dp"
+            android:layout_height="469dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/persona_asustada" />
 
     </LinearLayout>
 </ScrollView>
