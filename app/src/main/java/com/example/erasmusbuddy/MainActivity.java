@@ -25,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TestDB testy = new TestDB(MainActivity.this);
-        testy.runTests();
-
         // 1. Find the top bar and set it up
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
