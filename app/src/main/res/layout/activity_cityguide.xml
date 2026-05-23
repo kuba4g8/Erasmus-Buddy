@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:text="CITY GUIDE THESSALONIKI"
+                android:text="@string/city_guide_title"
                 android:textColor="#4E356D"
                 android:textSize="27sp"
                 android:textStyle="bold" />
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="Are you prepared to live in thessaloniki?"
+                android:text="@string/city_guide_prepared"
                 android:textAlignment="center"
                 android:textColor="#0F0000"
                 android:textSize="17sp" />
@@ -47,7 +47,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
-                android:text="Lets see if you know all these basic things..."
+                android:text="@string/city_guide_know_basics"
                 android:textAlignment="center"
                 android:textColor="#871313"
                 android:textSize="15sp" />
@@ -65,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:text="Basic Greek Vocabulary"
+                    android:text="@string/city_guide_vocabulary"
                     android:textAlignment="center"
                     android:textColor="#4E356D"
                     android:textSize="22sp"
@@ -78,7 +78,7 @@
                     android:background="@drawable/bubble_left"
                     android:backgroundTint="@color/white"
                     android:padding="12dp"
-                    android:text="Hello &#10;Γεια σου (Yia sou)"
+                    android:text="@string/city_guide_hello"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -89,7 +89,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bubble_right"
                     android:padding="12dp"
-                    android:text="Thank you &#10;Ευχαριστώ (Efharistó)"
+                    android:text="@string/city_guide_thank_you"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -99,7 +99,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bubble_left"
                     android:padding="12dp"
-                    android:text="Good morning &#10;Καλημέρα (Kaliméra)"
+                    android:text="@string/city_guide_good_morning"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -110,7 +110,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bubble_right"
                     android:padding="12dp"
-                    android:text="Cheers &#10;Γεια μας (Yia mas)"
+                    android:text="@string/city_guide_cheers"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -121,7 +121,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bubble_left"
                     android:padding="12dp"
-                    android:text="Nice to meet you &#10;Χάρηκα (Hárika)"
+                    android:text="@string/city_guide_nice_to_meet"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -132,7 +132,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bubble_right"
                     android:padding="12dp"
-                    android:text="Good evening &#10;Καλησπέρα (Kalispéra)"
+                    android:text="@string/city_guide_good_evening"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -143,7 +143,7 @@
                     android:background="@drawable/bubble_left"
                     android:backgroundTint="@color/white"
                     android:padding="12dp"
-                    android:text="I would like a coffee with milk, please. &#10;Θα ήθελα έναν καφέ με γάλα, παρακαλώ &#10;(Tha íthela énan kafé me gála, parakaló)"
+                    android:text="@string/city_guide_coffee_milk"
                     android:textColor="#333333"
                     android:textSize="16sp" />
 
@@ -155,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_marginBottom="12dp"
-                android:text="Best Spots and Plans "
+                android:text="@string/city_guide_best_spots"
                 android:textColor="#4E356D"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -164,7 +164,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="1. Walk along the port to see the WHITE TOWER and then UMBRELLAS sculpture"
+                android:text="@string/city_guide_plan1"
                 android:textColor="#333333"
                 android:textSize="17sp" />
 
@@ -183,7 +183,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
-                android:text="2. Go up to Ano Poli for SUNSET and VIEW of the city (ACROPOLIS WALLS)"
+                android:text="@string/city_guide_plan2"
                 android:textColor="#333333"
                 android:textSize="17sp" />
 
@@ -201,7 +201,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="69dp"
-                android:text="3. Take a beer with your friends in the BARS near ROTUNDA. Some of them even have DISCOUNT if you are Erasmus student: "
+                android:text="@string/city_guide_plan3"
                 android:textColor="#333333"
                 android:textSize="17sp" />
 
@@ -209,7 +209,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rotunda location (next to Arc of Galerio): "
+                android:text="@string/city_guide_rotunda_location"
                 android:textColor="#412657"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -220,7 +220,7 @@
                 android:layout_height="43dp"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="#7E57C2"
-                android:text="open map"
+                android:text="@string/city_guide_btn_map"
                 android:textColor="@android:color/white"
                 android:textStyle="normal" />
 
@@ -228,7 +228,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="4. Try BOUGATSA for breakfast"
+                android:text="@string/city_guide_plan4"
                 android:textColor="#333333"
                 android:textSize="17sp" />
 
@@ -244,7 +244,7 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="37dp"
-                android:text="5. Rent a car and explore HALKIDIKI BEACHES"
+                android:text="@string/city_guide_plan5"
                 android:textColor="#333333"
                 android:textSize="17sp" />
 
@@ -261,14 +261,14 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
-                android:text="6. Visit ROTUNDA and ARCH OF GALERIUS (free entrance for students below 25 )"
+                android:text="@string/city_guide_plan6"
                 android:textColor="#333333"
                 android:textSize="17sp" />
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="7. Spend a day in KARYDI BEACH "
+                android:text="@string/city_guide_plan7"
                 android:textColor="#333333"
                 android:textSize="17sp" />
             <ImageView
@@ -284,7 +284,7 @@
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="94dp"
-                android:text="GREECE HAS SO MANY GOOD PLANS WAITING FOR YOU !!!"
+                android:text="@string/city_guide_footer"
                 android:textColor="#3F51B5"
                 android:textSize="20sp"
                 android:textStyle="bold" />

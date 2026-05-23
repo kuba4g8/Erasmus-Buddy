@@ -17,7 +17,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="Erasmus Buddy"
+            app:title="@string/app_name"
             app:titleTextColor="@android:color/white" />
 
         <!-- Container for fragments -->

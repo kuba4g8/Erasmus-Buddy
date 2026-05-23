@@ -25,7 +25,7 @@
                 android:id="@+id/tvChallengesTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your Erasmus Challenges"
+                android:text="@string/challenges_title"
                 android:textAlignment="center"
                 android:textColor="#4E356D"
                 android:textSize="28sp"
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Complete small missions abroad and become a local legend."
+                android:text="@string/challenges_subtitle"
                 android:textAlignment="center"
                 android:textColor="#7A5C91"
                 android:textSize="16sp" />
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Add your own task"
+                android:text="@string/challenges_add_task"
                 android:textColor="#4E356D"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -72,7 +72,7 @@
                 android:id="@+id/etNewTask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Example: Buy coffee in local language"
+                android:hint="@string/challenges_hint_new_task"
                 android:inputType="text"
                 android:textColor="#291840" />
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:backgroundTint="#7E57C2"
-                android:text="ADD TASK"
+                android:text="@string/challenges_btn_add"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="Survival tasks"
+                android:text="@string/challenges_survival_tasks"
                 android:textColor="#4E356D"
                 android:textSize="18sp"
                 android:textStyle="bold" />

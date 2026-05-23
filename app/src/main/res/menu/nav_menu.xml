@@ -3,17 +3,17 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Home" />
+        android:title="@string/nav_home" />
     <item
         android:id="@+id/nav_challenges"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Survival Tasks" />
+        android:title="@string/nav_challenges" />
     <item
         android:id="@+id/nav_emergency"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Emergency" />
+        android:title="@string/nav_emergency" />
     <item
         android:id="@+id/nav_guide"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="City Guide" />
+        android:title="@string/nav_guide" />
 </menu>

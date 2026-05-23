@@ -2,4 +2,64 @@
     <string name="app_name">Erasmus Buddy</string>
     <string name="open_drawer">Open Menu</string>
     <string name="close_drawer">Close menu</string>
+
+    <!-- Navigation Menu -->
+    <string name="nav_home">Home</string>
+    <string name="nav_challenges">Survival Tasks</string>
+    <string name="nav_emergency">Emergency</string>
+    <string name="nav_guide">City Guide</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Erasmus Buddy</string>
+    <string name="home_subtitle">Your survival kit for Erasmus chaos...</string>
+    <string name="home_hint_name">Write your Name</string>
+    <string name="home_welcome">Welcome!</string>
+    <string name="home_welcome_back">Welcome back %s!</string>
+    <string name="home_btn_start">START</string>
+
+    <!-- Challenges Screen -->
+    <string name="challenges_title">Your Erasmus Challenges</string>
+    <string name="challenges_subtitle">Complete small missions abroad and become a local legend.</string>
+    <string name="challenges_add_task">Add your own task</string>
+    <string name="challenges_hint_new_task">Example: Buy coffee in local language</string>
+    <string name="challenges_btn_add">ADD TASK</string>
+    <string name="challenges_survival_tasks">Survival tasks</string>
+    <string name="challenges_default_task">New Task</string>
+
+    <!-- Emergency Screen -->
+    <string name="emergency_title">Greek Emergency Numbers</string>
+    <string name="emergency_112_desc">European Emergency Number (General emergency)</string>
+    <string name="emergency_100_desc">Hellenic Police</string>
+    <string name="emergency_166_desc">Medical Emergencies / Ambulance</string>
+    <string name="emergency_199_desc">Fire Department</string>
+    <string name="emergency_108_desc">Hellenic Coast Guard</string>
+    <string name="emergency_171_desc">Tourist Police (Assistance for visitors)</string>
+    <string name="emergency_bubble_text">What do I do!?</string>
+
+    <!-- City Guide Screen -->
+    <string name="city_guide_title">CITY GUIDE THESSALONIKI</string>
+    <string name="city_guide_prepared">Are you prepared to live in thessaloniki?</string>
+    <string name="city_guide_know_basics">Lets see if you know all these basic things...</string>
+    <string name="city_guide_vocabulary">Basic Greek Vocabulary</string>
+    <string name="city_guide_hello">Hello \nΓεια σου (Yia sou)</string>
+    <string name="city_guide_thank_you">Thank you \nΕυχαριστώ (Efharistó)</string>
+    <string name="city_guide_good_morning">Good morning \nΚαλημέρα (Kaliméra)</string>
+    <string name="city_guide_cheers">Cheers \nΓεια μας (Yia mas)</string>
+    <string name="city_guide_nice_to_meet">Nice to meet you \nΧάρηka (Hárika)</string>
+    <string name="city_guide_good_evening">Good evening \nΚαλησπέρα (Kalispéra)</string>
+    <string name="city_guide_coffee_milk">I would like a coffee with milk, please. \nΘα ήθεla έναν καφέ με γάla, parakaλώ \n(Tha íthela énan kafé me gála, parakaló)</string>
+    <string name="city_guide_best_spots">Best Spots and Plans</string>
+    <string name="city_guide_plan1">1. Walk along the port to see the WHITE TOWER and then UMBRELLAS sculpture</string>
+    <string name="city_guide_plan2">2. Go up to Ano Poli for SUNSET and VIEW of the city (ACROPOLIS WALLS)</string>
+    <string name="city_guide_plan3">3. Take a beer with your friends in the BARS near ROTUNDA. Some of them even have DISCOUNT if you are Erasmus student:</string>
+    <string name="city_guide_rotunda_location">Rotunda location (next to Arc of Galerio):</string>
+    <string name="city_guide_btn_map">open map</string>
+    <string name="city_guide_plan4">4. Try BOUGATSA for breakfast</string>
+    <string name="city_guide_plan5">5. Rent a car and explore HALKIDIKI BEACHES</string>
+    <string name="city_guide_plan6">6. Visit ROTUNDA and ARCH OF GALERIUS (free entrance for students below 25 )</string>
+    <string name="city_guide_plan7">7. Spend a day in KARYDI BEACH</string>
+    <string name="city_guide_footer">GREECE HAS SO MANY GOOD PLANS WAITING FOR YOU !!!</string>
+
+    <!-- Errors -->
+    <string name="error_no_map_app">No application found to open map</string>
 </resources>

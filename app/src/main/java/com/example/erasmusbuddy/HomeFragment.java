@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /*
@@ -18,18 +20,18 @@ import androidx.fragment.app.Fragment;
  */
 public class HomeFragment extends Fragment {
 
+    private EditText inputName;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // 1. Tell the app which layout file (XML) to use for this screen
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // 2. Find the elements by its ID from the XML file
-        final EditText inputName = view.findViewById(R.id.etNameCity);
+        inputName = view.findViewById(R.id.etNameCity);
         final TextView welcomeText = view.findViewById(R.id.tvWelcome);
         Button startButton = view.findViewById(R.id.btnStart);
 
         // 3. Open the "temporary DB" (SharedPreferences) so we can save name of user
-        // Jakub Need to change it later for saving in DB
         final SharedPreferences prefs = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
         // 4. Checking if name is saved in UserData
@@ -39,7 +41,7 @@ public class HomeFragment extends Fragment {
         if (!savedName.isEmpty()){
             inputName.setVisibility(View.GONE);
             welcomeText.setVisibility(View.VISIBLE);
-            welcomeText.setText("Welcome back " + savedName + "!");
+            welcomeText.setText(getString(R.string.home_welcome_back, savedName));
         }
 
         // 6. Tell the button what to do when someone clicks it
@@ -65,5 +67,24 @@ public class HomeFragment extends Fragment {
 
         // 7. Send the finished view to the phone screen
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (inputName != null) {
+            outState.putString("saved_input_name", inputName.getText().toString());
+        }
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (savedInstanceState != null) {
+            String savedText = savedInstanceState.getString("saved_input_name");
+            if (inputName != null && savedText != null) {
+                inputName.setText(savedText);
+            }
+        }
     }
 }
