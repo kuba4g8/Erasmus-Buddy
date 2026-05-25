@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/challenges_default_task"
-        android:textColor="#3A284E" />
+        android:textColor="@color/text_challenge_dark" />
 
     <Button
         android:id="@+id/btnDeleteTask"

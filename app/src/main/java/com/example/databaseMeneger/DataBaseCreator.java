@@ -16,9 +16,12 @@ public class DataBaseCreator extends SQLiteOpenHelper
     public final static String task_Name = "task";
     public final static String isDone = "isDone";
 
+    private final Context context;
+
     public DataBaseCreator(Context context)
     {
         super(context, DATABASE_NAME, null, DB_Version);
+        this.context = context;
     }
 
     @Override
@@ -34,14 +37,15 @@ public class DataBaseCreator extends SQLiteOpenHelper
     }
 
     private void insertDefaulTasks(SQLiteDatabase db){
+        // We use context.getString() to fetch localized strings from strings.xml
         String[] defaultTasks = {
-                "Find the nearest hospital",
-                "Make one local friend",
-                "Visit 3 cultural spots",
-                "Use public transport without getting lost",
-                "Make excursion with ESN organization",
-                "Find the cheapest supermarket",
-                "Buy coffee in the local language"
+                context.getString(com.example.erasmusbuddy.R.string.db_hospital),
+                context.getString(com.example.erasmusbuddy.R.string.db_friend),
+                context.getString(com.example.erasmusbuddy.R.string.db_cultural),
+                context.getString(com.example.erasmusbuddy.R.string.db_transport),
+                context.getString(com.example.erasmusbuddy.R.string.db_ESN),
+                context.getString(com.example.erasmusbuddy.R.string.db_supermarket),
+                context.getString(com.example.erasmusbuddy.R.string.db_coffe)
         };
 
         for (String task : defaultTasks){

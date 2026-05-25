@@ -2,4 +2,28 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Backgrounds -->
+    <color name="background_pink_white">#FFF7FD</color>
+    <color name="background_purple_light">#E6D5FF</color>
+    <color name="background_blue_light">#78CAE2</color>
+    <color name="background_emergency_red">#D18585</color>
+    <color name="background_bubble_pink">#EBCCCC</color>
+    <color name="accent_yellow">#EFDB02</color>
+
+    <!-- Text Colors -->
+    <color name="text_purple_dark">#4E356D</color>
+    <color name="text_purple_medium">#7A5C91</color>
+    <color name="text_purple_bold">#412657</color>
+    <color name="text_input_dark">#291840</color>
+    <color name="text_gray_dark">#333333</color>
+    <color name="text_red_dark">#871313</color>
+    <color name="text_indigo">#3F51B5</color>
+    <color name="text_maroon_dark">#330606</color>
+    <color name="text_emergency_red">#9E0F0F</color>
+    <color name="text_challenge_dark">#3A284E</color>
+    <color name="text_black_near">#111111</color>
+
+    <!-- UI Elements -->
+    <color name="button_purple">#7E57C2</color>
 </resources>

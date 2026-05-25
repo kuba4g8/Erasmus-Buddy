@@ -3,7 +3,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D18585"
+    android:background="@color/background_emergency_red"
     android:padding="16dp">
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:paddingBottom="24dp"
             android:text="@string/emergency_title"
             android:textAlignment="center"
-            android:textColor="#330606"
+            android:textColor="@color/text_maroon_dark"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:text="@string/emergency_112_desc"
-            android:textColor="#0B0000"
+            android:textColor="@color/text_black_near"
             android:textSize="16sp" />
 
         <!-- 100: Police -->
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:text="@string/emergency_100_desc"
-            android:textColor="#0D0000"
+            android:textColor="@color/text_black_near"
             android:textSize="16sp" />
 
         <!-- 166: Ambulance -->
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:text="@string/emergency_166_desc"
-            android:textColor="#0F0000"
+            android:textColor="@color/text_black_near"
             android:textSize="16sp" />
 
         <!-- 199: Fire -->
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:text="@string/emergency_199_desc"
-            android:textColor="#0F0000"
+            android:textColor="@color/text_black_near"
             android:textSize="16sp" />
 
         <TextView
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:text="@string/emergency_108_desc"
-            android:textColor="#0D0000"
+            android:textColor="@color/text_black_near"
             android:textSize="16sp" />
 
         <TextView
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:text="@string/emergency_171_desc"
-            android:textColor="#140000"
+            android:textColor="@color/text_black_near"
             android:textSize="16sp" />
 
         <TextView
@@ -123,10 +123,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/bubble_right"
-            android:backgroundTint="#EBCCCC"
+            android:backgroundTint="@color/background_bubble_pink"
             android:padding="12dp"
             android:text="@string/emergency_bubble_text"
-            android:textColor="#9E0F0F"
+            android:textColor="@color/text_emergency_red"
             android:textSize="23sp"
             android:textStyle="bold" />
 

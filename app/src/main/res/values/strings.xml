@@ -62,4 +62,15 @@
 
     <!-- Errors -->
     <string name="error_no_map_app">No application found to open map</string>
+
+    <!-- DataBaseCreator -->
+    <string name="db_hospital">Find the nearest hospital</string>
+    <string name="db_friend">Make one local friend</string>
+    <string name="db_cultural">Visit 3 cultural spots</string>
+    <string name="db_transport">Use public transport without getting lost</string>
+    <string name="db_ESN">Make excursion with ESN organization</string>
+    <string name="db_supermarket">Find the cheapest supermarket</string>
+    <string name="db_coffe">Buy coffee in the local language</string>
+
+
 </resources>

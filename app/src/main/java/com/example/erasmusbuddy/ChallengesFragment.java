@@ -6,23 +6,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.databaseMeneger.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Fragment responsible for managing the user's "Survival Challenges".
  * It provides an interface to view, add, and delete tasks stored in a SQLite database.
- * To maintain a smooth user experience, all database operations are executed in background threads.
+ * This version uses RecyclerView for efficient list management as per modern Android standards.
  */
-public class ChallengesFragment extends Fragment {
+public class ChallengesFragment extends Fragment implements ChallengeAdapter.OnTaskActionListener {
 
-    private LinearLayout containerTasks;
+    private RecyclerView rvTasks;
+    private ChallengeAdapter adapter;
     private EditText etNewTask;
     private DataBaseController dbController;
 
@@ -31,13 +34,18 @@ public class ChallengesFragment extends Fragment {
         // Inflate the fragment layout
         View view = inflater.inflate(R.layout.activity_challenges, container, false);
 
-        // Initialize the Database Controller with Application Context to prevent memory leaks
+        // Initialize the Database Controller
         dbController = new DataBaseController(getContext().getApplicationContext());
         
-        // Find and bind UI elements from the layout
-        containerTasks = view.findViewById(R.id.containerTasks);
+        // Find UI elements
+        rvTasks = view.findViewById(R.id.rvTasks);
         etNewTask = view.findViewById(R.id.etNewTask);
         Button btnAdd = view.findViewById(R.id.btnAddTask);
+
+        // Setup RecyclerView with LinearLayoutManager and Adapter
+        rvTasks.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new ChallengeAdapter(new ArrayList<>(), this);
+        rvTasks.setAdapter(adapter);
 
         // Fetch and display existing tasks from the database
         refreshTasks();
@@ -46,16 +54,16 @@ public class ChallengesFragment extends Fragment {
         btnAdd.setOnClickListener(v -> {
             String taskText = etNewTask.getText().toString().trim();
             if (!taskText.isEmpty()) {
-                // Perform DB insertion in a background thread to keep UI responsive
                 new Thread(() -> {
                     dbController.insertTask(taskText);
-                    
-                    // Refresh the UI list after successful insertion
-                    refreshTasks();
 
-                    // Clear the input field on the Main (UI) Thread
+                    List<Task> tasks = dbController.getTaskList();
+
                     if (getActivity() != null && isAdded()) {
-                        getActivity().runOnUiThread(() -> etNewTask.setText(""));
+                        getActivity().runOnUiThread(() -> {
+                            adapter.updateTasks(tasks);
+                            etNewTask.setText("");
+                        });
                     }
                 }).start();
             }
@@ -66,63 +74,37 @@ public class ChallengesFragment extends Fragment {
 
     /**
      * Retrieves the current list of tasks from the database in the background.
-     * Triggers a UI update once the data is fetched.
      */
     private void refreshTasks() {
         new Thread(() -> {
             List<Task> tasks = dbController.getTaskList();
-            // Always check if fragment is still attached before updating the UI
             if (getActivity() != null && isAdded()) {
-                getActivity().runOnUiThread(() -> displayTasks(tasks));
+                getActivity().runOnUiThread(() -> adapter.updateTasks(tasks));
             }
         }).start();
     }
 
     /**
-     * Clears the current list in the UI and renders the provided list of tasks.
+     * Implementation of the delete action from the Adapter.
      */
-    private void displayTasks(List<Task> tasks) {
-        containerTasks.removeAllViews();
-        for (Task task : tasks) {
-            addNewTask(task);
-        }
+    @Override
+    public void onTaskDelete(Task task, int position) {
+        new Thread(() -> {
+            // Delete from DB in background
+            dbController.deleteAtID(task.id);
+            // Refresh the whole list to ensure UI is in sync with DB
+            refreshTasks();
+        }).start();
     }
 
     /**
-     * Inflates a new task item view and adds it to the list container.
-     * Sets up listeners for checkbox changes and task deletion.
+     * Implementation of the status change action from the Adapter.
      */
-    private void addNewTask(Task task) {
-        // Inflate the layout for a single task row
-        View taskView = getLayoutInflater().inflate(R.layout.item_challange, null);
-
-        // Bind data to the CheckBox
-        CheckBox cb = taskView.findViewById(R.id.cbChallenge);
-        cb.setText(task.taskName);
-        cb.setChecked(task.isDone == 1);
-
-        // Update database when the checkbox state changes
-        cb.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            new Thread(() -> {
-                dbController.updateAtID(task.id, task.taskName, isChecked ? 1 : 0);
-            }).start();
-        });
-
-        // Set up the delete button functionality
-        Button btnDelete = taskView.findViewById(R.id.btnDeleteTask);
-        btnDelete.setOnClickListener(v -> {
-            new Thread(() -> {
-                // Delete from DB in background
-                dbController.deleteAtID(task.id);
-                // Remove from UI in the foreground
-                if (getActivity() != null && isAdded()) {
-                    getActivity().runOnUiThread(() -> containerTasks.removeView(taskView));
-                }
-            }).start();
-        });
-
-        // Add the completed task view to our main list container
-        containerTasks.addView(taskView);
+    @Override
+    public void onTaskStatusChanged(Task task, boolean isChecked) {
+        new Thread(() -> {
+            dbController.updateAtID(task.id, task.taskName, isChecked ? 1 : 0);
+        }).start();
     }
 
     @Override
