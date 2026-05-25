@@ -5,6 +5,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.nfc.Tag;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,8 @@ public class DataBaseController
 {
     private DataBaseCreator DBcreator;
     private SQLiteDatabase DBObject;
+
+    private static final String TAG = "DataBaseController";
 
     private final static String[] columns = {
             DataBaseCreator.keyID_Name,
@@ -61,7 +65,7 @@ public class DataBaseController
         }
         catch (RuntimeException e)
         {
-            e.printStackTrace();
+            Log.e(TAG, "Error during database operation");
         }
         finally
         {
@@ -113,7 +117,7 @@ public class DataBaseController
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            Log.e(TAG, "Error during database operation");
         }
         finally
         {
@@ -151,7 +155,7 @@ public class DataBaseController
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            Log.e(TAG, "Error during database operation");
         }
         finally
         {
@@ -188,7 +192,7 @@ public class DataBaseController
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            Log.e(TAG, "Error during database operation");
         }
         finally
         {
