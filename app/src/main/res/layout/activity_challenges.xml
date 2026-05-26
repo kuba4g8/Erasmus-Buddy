@@ -52,8 +52,8 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
                 android:background="@color/accent_yellow"
                 android:scaleX="1.3"
                 android:src="@drawable/challenge" />
