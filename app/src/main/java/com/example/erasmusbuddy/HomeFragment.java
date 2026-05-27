@@ -14,49 +14,55 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-/*
- * This is the Home Screen. It is a "Fragment", which is like a smaller
- * screen that fits inside the Main Activity.
+/**
+ * HomeFragment serves as the main entry point of the application.
+ * It handles user registration by saving their name into SharedPreferences
+ * and provides navigation to the challenges section.
  */
 public class HomeFragment extends Fragment {
 
     private EditText inputName;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // 1. Tell the app which layout file (XML) to use for this screen
+        // Inflating the layout specifically designed for the Home experience
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // 2. Find the elements by its ID from the XML file
+        // Binding UI elements to local variables for manipulation
         inputName = view.findViewById(R.id.etNameCity);
         final TextView welcomeText = view.findViewById(R.id.tvWelcome);
         Button startButton = view.findViewById(R.id.btnStart);
 
-        // 3. Open the "temporary DB" (SharedPreferences) so we can save name of user
+        // Accessing SharedPreferences to check for existing user data.
+        // MODE_PRIVATE ensures this data is only accessible by this application.
         final SharedPreferences prefs = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE);
 
-        // 4. Checking if name is saved in UserData
+        // Retrieving the saved name; defaults to an empty string if first run.
         String savedName = prefs.getString("user_name", "");
 
-        // 5. If name is saved, hide input, show text
+        // If the user has already registered, we adjust the UI to a "Welcome Back" state
+        // instead of showing the registration form.
         if (!savedName.isEmpty()){
             inputName.setVisibility(View.GONE);
             welcomeText.setVisibility(View.VISIBLE);
             welcomeText.setText(getString(R.string.home_welcome_back, savedName));
         }
 
-        // 6. Tell the button what to do when someone clicks it
+        // Setting up the click listener for the transition to the main features.
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // If we don't have username saved, we need to take it from input and save it
                 String currentName = inputName.getText().toString();
+                
+                // If this is the first time the user is interacting and they provided a name,
+                // we persist it immediately using apply() (asynchronous save).
                 if(savedName.isEmpty() && !currentName.isEmpty()){
-                    // editor is permamently saving username in phone memory
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("user_name", currentName);
                     editor.apply();
                 }
-                // When clicked, we swap the current fragment with the Challenges screen
+
+                // Navigating to the ChallengesFragment. 
+                // We use replace() to ensure we don't stack multiple fragments unnecessarily.
                 if (getActivity() != null) {
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragment_container, new ChallengesFragment())
@@ -65,7 +71,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // 7. Send the finished view to the phone screen
         return view;
     }
 
@@ -77,9 +82,15 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    /**
+     * Restores the UI state after a configuration change.
+     * @param view The fragment's root view.
+     * @param savedInstanceState The bundle containing saved data.
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Restoring the draft name so the user doesn't have to re-type it after a rotation.
         if (savedInstanceState != null) {
             String savedText = savedInstanceState.getString("saved_input_name");
             if (inputName != null && savedText != null) {
