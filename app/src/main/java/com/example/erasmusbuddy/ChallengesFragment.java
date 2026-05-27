@@ -31,34 +31,39 @@ public class ChallengesFragment extends Fragment implements ChallengeAdapter.OnT
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the fragment layout
+        // Inflating the main layout for challenges
         View view = inflater.inflate(R.layout.activity_challenges, container, false);
 
-        // Initialize the Database Controller
+        // Initializing the Database Controller with the Application Context.
+        // We use getApplicationContext() to avoid memory leaks that can happen
+        // if we hold a reference to an Activity's short-lived Context.
         dbController = new DataBaseController(getContext().getApplicationContext());
         
-        // Find UI elements
+        // Locating UI components
         rvTasks = view.findViewById(R.id.rvTasks);
         etNewTask = view.findViewById(R.id.etNewTask);
         Button btnAdd = view.findViewById(R.id.btnAddTask);
 
-        // Setup RecyclerView with LinearLayoutManager and Adapter
+        // Setting up the RecyclerView
         rvTasks.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new ChallengeAdapter(new ArrayList<>(), this);
         rvTasks.setAdapter(adapter);
 
-        // Fetch and display existing tasks from the database
+        // Fetching initial data from the database
         refreshTasks();
 
-        // Listener for the "ADD TASK" button
+        // Logical flow for adding a new task
         btnAdd.setOnClickListener(v -> {
             String taskText = etNewTask.getText().toString().trim();
             if (!taskText.isEmpty()) {
+                // Database operations are done in a separate thread to prevent crashes
                 new Thread(() -> {
                     dbController.insertTask(taskText);
 
+                    // Re-fetching the full list to ensure data integrity
                     List<Task> tasks = dbController.getTaskList();
 
+                    // We must return to the UI (Main) thread to update any view elements
                     if (getActivity() != null && isAdded()) {
                         getActivity().runOnUiThread(() -> {
                             adapter.updateTasks(tasks);
@@ -74,10 +79,14 @@ public class ChallengesFragment extends Fragment implements ChallengeAdapter.OnT
 
     /**
      * Retrieves the current list of tasks from the database in the background.
+     * Updates the RecyclerView adapter upon completion.
      */
     private void refreshTasks() {
+        // Performing background fetch to keep the UI thread smooth
         new Thread(() -> {
             List<Task> tasks = dbController.getTaskList();
+            
+            // Checking if the fragment is still active before updating UI to avoid crashes
             if (getActivity() != null && isAdded()) {
                 getActivity().runOnUiThread(() -> adapter.updateTasks(tasks));
             }
@@ -90,9 +99,9 @@ public class ChallengesFragment extends Fragment implements ChallengeAdapter.OnT
     @Override
     public void onTaskDelete(Task task, int position) {
         new Thread(() -> {
-            // Delete from DB in background
+            // Asynchronous deletion from the persistent SQLite database
             dbController.deleteAtID(task.id);
-            // Refresh the whole list to ensure UI is in sync with DB
+            // Refreshing the list to sync UI with the current database state
             refreshTasks();
         }).start();
     }
@@ -103,6 +112,7 @@ public class ChallengesFragment extends Fragment implements ChallengeAdapter.OnT
     @Override
     public void onTaskStatusChanged(Task task, boolean isChecked) {
         new Thread(() -> {
+            // Persistent update of the 'isDone' field in the background
             dbController.updateAtID(task.id, task.taskName, isChecked ? 1 : 0);
         }).start();
     }
