@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FD"
+    android:background="@color/background_pink_white"
     tools:context=".HomeFragment">
 
     <LinearLayout
@@ -28,6 +28,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="28dp"
             android:text="ErasMove GR"
+            android:textColor="@color/text_purple_dark"
             android:textSize="32sp"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -52,7 +53,9 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="24dp"
-            android:hint="@string/home_hint_name" />
+            android:hint="@string/home_hint_name"
+            android:textColor="@color/text_input_dark"
+            android:textColorHint="@color/text_purple_medium"/>
 
         <ImageView
             android:id="@+id/ivLogo"
@@ -102,7 +105,7 @@
                 android:paddingStart="10dp"
                 android:text="Become an explorer with your ERASMUS BUDDY and press START to see some relevant tips"
                 android:textAllCaps="false"
-                android:textColor="#555555"
+                android:textColor="@color/text_purple_dark"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -114,7 +117,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="28dp"
             android:layout_marginBottom="32dp"
-            android:text="START" />
+            android:backgroundTint="@color/button_purple"
+            android:text="START"
+            android:textColor="@color/white" />/>
 
     </LinearLayout>
 
